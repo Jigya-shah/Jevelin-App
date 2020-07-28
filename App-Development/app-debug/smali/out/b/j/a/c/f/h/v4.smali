@@ -1,0 +1,428 @@
+.class public abstract Lb/j/a/c/f/h/v4;
+.super Ljava/lang/Object;
+.source ""
+
+# interfaces
+.implements Lb/j/a/c/f/h/o7;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<MessageType:",
+        "Lb/j/a/c/f/h/v4<",
+        "TMessageType;TBuilderType;>;BuilderType:",
+        "Lb/j/a/c/f/h/u4<",
+        "TMessageType;TBuilderType;>;>",
+        "Ljava/lang/Object;",
+        "Lb/j/a/c/f/h/o7;"
+    }
+.end annotation
+
+
+# instance fields
+.field public zza:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lb/j/a/c/f/h/v4;->zza:I
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/Iterable;Ljava/util/List;)V
+    .registers 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "TT;>;",
+            "Ljava/util/List<",
+            "-TT;>;)V"
+        }
+    .end annotation
+
+    invoke-static {p0}, Lb/j/a/c/f/h/k6;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    instance-of v0, p0, Lb/j/a/c/f/h/z6;
+
+    const-string v1, " is null."
+
+    const-string v2, "Element at index "
+
+    const/16 v3, 0x25
+
+    if-eqz v0, :cond_66
+
+    check-cast p0, Lb/j/a/c/f/h/z6;
+
+    invoke-interface {p0}, Lb/j/a/c/f/h/z6;->e()Ljava/util/List;
+
+    move-result-object p0
+
+    move-object v0, p1
+
+    check-cast v0, Lb/j/a/c/f/h/z6;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_1e
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_65
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    if-nez v4, :cond_55
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result p0
+
+    sub-int/2addr p0, p1
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    :goto_47
+    if-lt v1, p1, :cond_4f
+
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_47
+
+    :cond_4f
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    invoke-direct {p1, p0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_55
+    instance-of v5, v4, Lb/j/a/c/f/h/e5;
+
+    if-eqz v5, :cond_5f
+
+    check-cast v4, Lb/j/a/c/f/h/e5;
+
+    invoke-interface {v0, v4}, Lb/j/a/c/f/h/z6;->a(Lb/j/a/c/f/h/e5;)V
+
+    goto :goto_1e
+
+    :cond_5f
+    check-cast v4, Ljava/lang/String;
+
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1e
+
+    :cond_65
+    return-void
+
+    :cond_66
+    instance-of v0, p0, Lb/j/a/c/f/h/y7;
+
+    if-eqz v0, :cond_70
+
+    check-cast p0, Ljava/util/Collection;
+
+    invoke-interface {p1, p0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    return-void
+
+    :cond_70
+    instance-of v0, p1, Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_8a
+
+    instance-of v0, p0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_8a
+
+    move-object v0, p1
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    move-object v5, p0
+
+    check-cast v5, Ljava/util/Collection;
+
+    invoke-interface {v5}, Ljava/util/Collection;->size()I
+
+    move-result v5
+
+    add-int/2addr v5, v4
+
+    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->ensureCapacity(I)V
+
+    :cond_8a
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_92
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_cd
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    if-nez v4, :cond_c9
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p0
+
+    sub-int/2addr p0, v0
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    :goto_bb
+    if-lt v1, v0, :cond_c3
+
+    invoke-interface {p1, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_bb
+
+    :cond_c3
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    invoke-direct {p1, p0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_c9
+    invoke-interface {p1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_92
+
+    :cond_cd
+    return-void
+.end method
+
+
+# virtual methods
+.method public final f()Lb/j/a/c/f/h/e5;
+    .registers 8
+
+    :try_start_0
+    invoke-interface {p0}, Lb/j/a/c/f/h/o7;->d()I
+
+    move-result v0
+
+    invoke-static {v0}, Lb/j/a/c/f/h/e5;->b(I)Lb/j/a/c/f/h/k5;
+
+    move-result-object v0
+
+    .line 1
+    iget-object v1, v0, Lb/j/a/c/f/h/k5;->a:Lb/j/a/c/f/h/o5;
+
+    .line 2
+    invoke-interface {p0, v1}, Lb/j/a/c/f/h/o7;->a(Lb/j/a/c/f/h/o5;)V
+
+    invoke-virtual {v0}, Lb/j/a/c/f/h/k5;->a()Lb/j/a/c/f/h/e5;
+
+    move-result-object v0
+    :try_end_11
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_11} :catch_12
+
+    return-object v0
+
+    :catch_12
+    move-exception v0
+
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "ByteString"
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x3e
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v5, v4
+
+    const-string v4, "Serializing "
+
+    const-string v6, " to a "
+
+    invoke-static {v5, v4, v3, v6, v2}, Lb/e/a/a/a;->a(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " threw an IOException (should never happen)."
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final h()[B
+    .registers 8
+
+    :try_start_0
+    invoke-interface {p0}, Lb/j/a/c/f/h/o7;->d()I
+
+    move-result v0
+
+    new-array v0, v0, [B
+
+    invoke-static {v0}, Lb/j/a/c/f/h/o5;->a([B)Lb/j/a/c/f/h/o5;
+
+    move-result-object v1
+
+    invoke-interface {p0, v1}, Lb/j/a/c/f/h/o7;->a(Lb/j/a/c/f/h/o5;)V
+
+    .line 1
+    invoke-virtual {v1}, Lb/j/a/c/f/h/o5;->a()I
+
+    move-result v1
+
+    if-nez v1, :cond_14
+
+    return-object v0
+
+    :cond_14
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Did not write as much data as expected."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_1c
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_1c} :catch_1c
+
+    :catch_1c
+    move-exception v0
+
+    .line 2
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x3e
+
+    add-int/lit8 v3, v3, 0xa
+
+    const-string v4, "Serializing "
+
+    const-string v5, " to a "
+
+    const-string v6, "byte array"
+
+    invoke-static {v3, v4, v2, v5, v6}, Lb/e/a/a/a;->a(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " threw an IOException (should never happen)."
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
