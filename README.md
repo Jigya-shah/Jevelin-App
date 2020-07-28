@@ -2,7 +2,7 @@
 # JEVELIN
 
   
-## Submitted By: Team alpha_coders*
+## Submitted By: Team Alpha_Coders*
 
 **Team Members:**
 - Amitha Nayak
