@@ -33,7 +33,7 @@ The basic app design is created which can be modified futher for better usage.
 Language/framework used: Bravo Studio
 
 **Compulsary Requirements:**
-- An Youtube video link explaining all the features of the developed application :https://youtu.be/RrRunhiA3fk
+- An Youtube video link explaining all the features of the developed application :https://youtu.be/0eGXeOMYoXw
 
 
 ---
